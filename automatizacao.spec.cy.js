@@ -33,4 +33,10 @@ describe('Validação de campos', () => {
         cy.contains('span.alert-error','Adicione uma foto da sua CNH').should('be.visible')  
 
     })
+
+    it('AcessandoBotãoHomeERetornando',() => {
+        cy.get('a').click();
+        cy.get('a').click();
+        cy.contains('main','Seja um parceiro entregador pela Buger Eats');
+    })
 })
