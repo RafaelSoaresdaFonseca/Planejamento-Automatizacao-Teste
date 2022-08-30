@@ -20,4 +20,17 @@ describe('Validação de campos', () => {
         cy.contains('span.alert-error','Adicione uma foto da sua CNH').should('be.visible')      
         
     })
+
+    it('ValidacaoDasMensagensDeErro', () => {
+        cy.get('a').click();
+        cy.get(':nth-child(2) > :nth-child(2) > :nth-child(1) > input').type('Rafael Fonseca');
+        cy.get('.button-success').click();
+        cy.contains('span.alert-error','É necessário informar o CPF').should('be.visible');
+        cy.contains('span.alert-error','É necessário informar o email').should('be.visible');
+        cy.contains('span.alert-error','É necessário informar o CEP').should('be.visible');
+        cy.contains('span.alert-error','É necessário informar o número do endereço').should('be.visible');
+        cy.contains('span.alert-error','Selecione o método de entrega').should('be.visible');
+        cy.contains('span.alert-error','Adicione uma foto da sua CNH').should('be.visible')  
+
+    })
 })
